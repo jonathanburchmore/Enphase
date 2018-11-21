@@ -61,7 +61,9 @@ class EnphaseApp extends Application.AppBase {
         setProperty("DefaultUserID", WatchUi.loadResource(Rez.Strings.DefaultUserID));
         setProperty("DefaultSystemID", WatchUi.loadResource(Rez.Strings.DefaultSystemID));
         
-        Background.registerForTemporalEvent(Time.now());
+        if (System.getDeviceSettings().connectionAvailable) {
+            Background.registerForTemporalEvent(Time.now());
+        }
 
         return [new EnphaseMainView(), new EnphaseMainDelegate()];
     }
