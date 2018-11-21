@@ -1,3 +1,5 @@
 <strings>
     <string id="AppName">Enphase</string>
+    <string id="UserID">Enphase User ID</string>
+    <string id="SystemID">Enphase System ID</string>
 </strings>

@@ -1,0 +1,9 @@
+<settings>
+    <setting propertyKey="@Properties.UserID" title="@Strings.UserID">
+        <settingConfig type="alphaNumeric" />
+	</setting>
+
+    <setting propertyKey="@Properties.SystemID" title="@Strings.SystemID">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+</settings>

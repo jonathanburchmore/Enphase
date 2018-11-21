@@ -1,0 +1,4 @@
+<properties>
+    <property id="UserID" type="string"></property>
+    <property id="SystemID" type="string"></property>
+</properties>

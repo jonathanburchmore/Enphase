@@ -1,15 +1,11 @@
 <layout id="MainLayout">
-    <drawable class="Background" />
-    <label text="Loading..." x="center" y="center" justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER" />
-    <drawable class="EnphaseGraph">
-        <param name="locX">24</param>
-        <param name="locY">50</param>
-        <param name="height">140</param>
-    </drawable>
-    <label x="60" y="25" font="Graphics.FONT_TINY" justification="Graphics.TEXT_JUSTIFY_CENTER" text="Produced" />
-    <label x="180" y="25" font="Graphics.FONT_TINY" justification="Graphics.TEXT_JUSTIFY_CENTER" text="Consumed" />
-
-    <label id="TotalProduction" x="center" y="500" font="Graphics.FONT_XTINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_BLUE" />
-    <label id="TotalConsumption" x="center" y="500" font="Graphics.FONT_XTINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_RED" />
-    <label id="Net" x="center" y="500" font="Graphics.FONT_XTINY" justification="Graphics.TEXT_JUSTIFY_CENTER" />
+    <label x="center" y="20" text="Enphase" font="Graphics.FONT_MEDIUM" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_LT_GRAY" />
+    
+    <label id="Net" x="15" y="120" font="Graphics.FONT_NUMBER_HOT" justification="Graphics.TEXT_JUSTIFY_LEFT|Graphics.TEXT_JUSTIFY_VCENTER" color="Graphics.COLOR_LT_GRAY" />
+    
+    <label id="TotalProduction" x="180" y="95" font="Graphics.FONT_NUMBER_MEDIUM" justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER" color="Graphics.COLOR_LT_GRAY" />
+    <drawable id="Divider" />
+    <label id="TotalConsumption" x="180" y="145" font="Graphics.FONT_NUMBER_MEDIUM" justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER" color="Graphics.COLOR_LT_GRAY" />
+    
+    <label id="LastUpdate" x="center" y="185" font="Graphics.FONT_XTINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_DK_GRAY" />
 </layout>
