@@ -163,6 +163,8 @@ class EnphaseGraphView extends WatchUi.View {
     }
 
     function onUpdate(dc) {
+        dc.setColor(Graphics.COLOR_TRANSPARENT, Graphics.COLOR_BLACK);
+        dc.clear();
         dc.drawBitmap(locX, locY, buffer);
     }
 }
