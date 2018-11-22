@@ -47,10 +47,15 @@ class EnphaseGraphView extends WatchUi.View {
     }
     
     function onLayout(dc) {
-        var bitmap_width = 6 * (Math.floor(96 * ((app.last_update - Time.today().value()) / 86400.0)));
-        
         height = Math.floor(dc.getHeight() * 0.95);
-        locX = dc.getWidth() - bitmap_width;
+
+        if (app.last_update == null || Time.today().value() - app.last_update > 86400) {
+            locX = 0;
+        }
+        else {
+            locX = dc.getWidth() - (6 * (Math.floor(96 * ((app.last_update - Time.today().value()) / 86400.0))));
+        }
+
         if (locX > 0) {
             locX = 0;
         }
@@ -58,7 +63,7 @@ class EnphaseGraphView extends WatchUi.View {
         locY = (dc.getHeight() - height) / 2;
         
         buffer = new Graphics.BufferedBitmap( {
-            :width => bitmap_width,
+            :width => 96 * 6,
             :height => height,
             :palette => [
                 Graphics.COLOR_BLACK,
