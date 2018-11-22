@@ -73,8 +73,9 @@ class EnphaseMainView extends WatchUi.View {
             label_net.setText(" --");
         }
         
-        if (app.last_update_hour != null && app.last_update_min != null) {
-            label_lastupdate.setText(app.last_update_hour.format("%02d") + ":" + app.last_update_min.format("%02d"));
+        if (app.last_update != null) {
+            var updated = Time.Gregorian.info(new Time.Moment(app.last_update), Time.FORMAT_SHORT);
+            label_lastupdate.setText(updated.hour.format("%02d") + ":" + updated.min.format("%02d"));
         }
         else {
             label_lastupdate.setText("");

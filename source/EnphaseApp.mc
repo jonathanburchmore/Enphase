@@ -18,8 +18,7 @@ class EnphaseApp extends Application.AppBase {
     var max_consumption;
     var total_consumption;
     
-    var last_update_hour;
-    var last_update_min;
+    var last_update;
     
     function initialize() {
         AppBase.initialize();
@@ -45,8 +44,7 @@ class EnphaseApp extends Application.AppBase {
         consumption = getProperty("consumption");
         max_consumption = getProperty("max_consumption");
         total_consumption = getProperty("total_consumption");
-        last_update_hour = getProperty("last_update_hour");
-        last_update_min = getProperty("last_update_min");
+        last_update = getProperty("last_update");
     }
 
     // onStop() is called when your application is exiting
@@ -82,8 +80,7 @@ class EnphaseApp extends Application.AppBase {
 	        max_consumption = data.get("max_consumption");
 	        total_consumption = data.get("total_consumption");
 	        
-	        last_update_hour = data.get("last_update_hour");
-	        last_update_min = data.get("last_update_min");
+	        last_update = data.get("last_update");
 
             setProperty("production", production);
             setProperty("max_production", max_production);
@@ -91,8 +88,7 @@ class EnphaseApp extends Application.AppBase {
             setProperty("consumption", consumption);
             setProperty("max_consumption", max_consumption);
             setProperty("total_consumption", total_consumption);
-            setProperty("last_update_hour", last_update_hour);
-            setProperty("last_update_min", last_update_min);
+            setProperty("last_update", last_update);
 	        
 	        WatchUi.requestUpdate();
 	    }

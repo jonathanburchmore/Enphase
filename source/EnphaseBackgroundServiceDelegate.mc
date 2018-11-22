@@ -168,8 +168,6 @@ class EnphaseBackgroundServiceDelegate extends System.ServiceDelegate {
         
         if (Time.today().value() + (43200 * pass) >= last_energy_at)
         {
-            var now = System.getClockTime();
-            
 	        Background.exit( {
                 "success" => true,
 	           
@@ -181,8 +179,7 @@ class EnphaseBackgroundServiceDelegate extends System.ServiceDelegate {
 	            "max_consumption" => max_consumption,
 	            "total_consumption" => total_consumption,
 	            
-	            "last_update_hour" => now.hour,
-	            "last_update_min" => now.min
+	            "last_update" => Time.now().value(),
 	        } );
         }
         else

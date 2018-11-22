@@ -47,7 +47,7 @@ class EnphaseGraphView extends WatchUi.View {
     }
     
     function onLayout(dc) {
-        var bitmap_width = 6 * (Math.floor(96 * ((Time.now().value() - Time.today().value()) / 86400.0)));
+        var bitmap_width = 6 * (Math.floor(96 * ((app.last_update - Time.today().value()) / 86400.0)));
         
         height = Math.floor(dc.getHeight() * 0.95);
         locX = dc.getWidth() - bitmap_width;
@@ -92,6 +92,11 @@ class EnphaseGraphView extends WatchUi.View {
     
     function scaled_watts(enwh) {
         var max = app.max_production;
+        
+        if (1000 > max ) {
+            max = 1000;
+        }
+        
         if (app.max_consumption > max) {
             max = app.max_consumption;
         }
