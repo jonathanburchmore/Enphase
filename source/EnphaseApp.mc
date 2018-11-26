@@ -9,6 +9,8 @@ class EnphaseApp extends Application.AppBase {
     var apikey;
     var userid;
     var systemid;
+
+    var updating;
     
     var production;
     var max_production;
@@ -22,6 +24,8 @@ class EnphaseApp extends Application.AppBase {
     
     function initialize() {
         AppBase.initialize();
+        
+        updating = false;
     }
 
     // onStart() is called on application start up
@@ -60,6 +64,7 @@ class EnphaseApp extends Application.AppBase {
         setProperty("DefaultSystemID", WatchUi.loadResource(Rez.Strings.DefaultSystemID));
         
         if (System.getDeviceSettings().connectionAvailable) {
+            updating = true;
             Background.registerForTemporalEvent(Time.now());
         }
 
@@ -71,6 +76,8 @@ class EnphaseApp extends Application.AppBase {
     }
     
     function onBackgroundData(data) {
+        updating = false;
+            
         if (data.get("success") == true) {
 	        production = data.get("production");
 	        max_production = data.get("max_production");
